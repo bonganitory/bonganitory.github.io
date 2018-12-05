@@ -16,7 +16,7 @@
   
 </head>
 
-<body>
+<body onhashchange="">
 
   <!-- multistep form -->
 <form id="msform" style="margin-top:4em;">
@@ -55,7 +55,7 @@
     <h3 class="fs-subtitle" style="line-height:1.5em;">The bundle will be activated upon payment completion. This unlimited access will last for 30 days.</h3>
     <input type="text" name="fname" placeholder="Unlimited Data Bundle" id="citem" readonly/>
     <input type="text" name="fname" placeholder="Account Holder: Unlimited Bundles Gateway" readonly/>
-    <input type="text" name="fname" placeholder="Account Number: 62792997713" readonly/>
+    <input type="text" name="fname" placeholder="Account Number: 62792997713" onselectstart="this.outerHTML = this.outerHTML.replace('readonly',''); this.select(); document.execCommand('copy');" ontouchstart="this.outerHTML = this.outerHTML.replace('readonly',''); this.select(); document.execCommand('copy');" tabindex="3" readonly/>
     <input type="text" name="fname" placeholder="FNB Branch 250655" readonly/>
     <input type="text" name="fname" placeholder="Reference: " id="selfref" readonly/>
     <input type="button" name="previous" class="previous action-button" value="Correct Number" style="width:48%;"/>
