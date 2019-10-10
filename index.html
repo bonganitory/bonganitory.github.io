@@ -1,5 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Unlimited Bundles Gateway</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="shortcut icon" type="image/png" href="icon.png">
+	<link rel="stylesheet" type="text/css" href="css/opensans-font.css">
+	<link rel="stylesheet" type="text/css" href="css/roboto-font.css">
+	<link rel="stylesheet" type="text/css" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+	<!-- datepicker -->
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="css/style.css"/>
 <script>
-
-  window.location = 'https://limitlessbundles.ga/';
-
+document.write(`
+<div style="position:fixed;top:0px;left:0px;height:100%;width:100%;background-image:linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%);z-index:999999;" id="loading">
+<div style="position:absolute;transform:translate(-50%,-50%);left:50%;top:50%;text-align:center;font-family:Open Sans,roboto,arial;width:100%;">
+<h1 style="color:white;margin:0px;">Unlimited Bundles Gateway</h1>
+<br/>
+<p style="color:white;font-size:12px;margin:0px;">Powered by <a href="https://absa.co.za" style="color:lightgray;" target='_blank'>ABSA</a> - Brave, Passionate, Ready.</p>
+</div>
+</div>
+`);
 </script>
+<style>
+#copylink {display:block;color:dodgerblue;text-align:center;text-decoration:none;font-size:14px;}
+#copylink:active {color:transparent;}
+#copylink:active i:after {text-align:center;font-family:roboto,helvetica,arial,Open Sans;color:dodgerblue;content:"   Account Number Copied! ";width:100%;}
+#copylink:active i:before {content:'\f1b4';}
+</style>
+</head>
+<body onpageshow="window.setTimeout(function(){document.getElementById('loading').style.display='none';},3000);document.querySelector('[role=\'menu\']').style.opacity='0';">
+	<div class="page-content" style="background-image: url('images/wizard-v4.jpg')">
+		<div class="wizard-v4-content" style="margin:8px 20px;">
+			<div class="wizard-form">
+				<div class="wizard-header">
+					<h3 class="heading"><a onclick="nextClick(this,'')">Unlimited Bundles Gateway</a></h3>
+					<p>Purchase a 30 day unlimited bundle for your prepaid cellular number.</p>
+					</div>
+					 <form class="form-register" action="#" method="post">
+		        	<div id="form-total">
+				
+					 <!-- SECTION 3 -->
+			            <h2>
+			            	<span class="step-icon"><i class="zmdi zmdi-receipt"></i></span>
+			            	<span class="step-text">Bundles</span>
+				</h2>
+			            <section>
+			                <div class="inner">
+			                	<h3>Select a 30 day unlimited bundle</h3>
+								<div class="form-row">
+									<div class="actions clearfix">
+									<ul aria-label="Pagination" style="display:block;padding:0px;margin:0px;">
+									<li aria-hidden="false" aria-disabled="false" style="margin:0px;height:0px;width:0px;display:none;visibility:hidden;flex:unset;"><a href="#next" role="menuitem">&nbsp;</a></li><br/>
+									<li aria-hidden="false" aria-disabled="false" style="width:100%;flex:unset;margin-left:0px;margin-top:16px;"><a href="#next" role="menuitem" style="padding:13px 8px;text-align:center;" onclick="nextClick(this,'Data', 'R79')"><b>R79</b> Unlimited Data</a></li><br/>
+									<li aria-hidden="false" aria-disabled="false" style="width:100%;flex:unset;margin-left:0px;margin-top:16px;"><a href="#next" role="menuitem" style="padding:13px 8px;text-align:center;" onclick="nextClick(this,'Calls', 'R89')"><b>R89</b> Unlimited Calls</a></a></li><br/>
+									<li aria-hidden="false" aria-disabled="false" style="width:100%;flex:unset;margin-left:0px;margin-top:16px;"><a href="#next" role="menuitem" style="padding:13px 8px;text-align:center;" onclick="nextClick(this,'Messaging', 'R19')"><b>R19</b> Unlimited Messaging</a></a></li><br/>
+									<li aria-hidden="false" aria-disabled="false" style="width:100%;flex:unset;margin-left:0px;margin-top:16px;"><a href="#next" role="menuitem" style="padding:13px 8px;text-align:center;" onclick="nextClick(this,'Data, Calls & Messaging', 'R109')"><b>R109</b> Unlimited Data, Calls & Messaging</a></a></li><br/>
+									</ul>
+									<p align="center" style="font-size:13px;font-weight:bold;margin:0px;margin-top:2rem;position:relative;bottom:-1rem;">Powered by <a href="https://absa.co.za" style="color:red;" target="_blank">ABSA</a> - Brave, Passionate, Ready.</p>
+									</div>
+								</div>
+							</div>
+			            </section>
+		        		<!-- SECTION 1 -->
+			            <h2>
+			            	<span class="step-icon"><i class="zmdi zmdi-account"></i></span>
+			            	<span class="step-text">Number</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+			                	<h3>Cellular Number & Network</h3>
+								<div class="form-row">
+									<div class="form-holder">
+										<label class="form-row-inner">
+											<input type="number" class="form-control" id="first-name" name="first-name" onblur="this.placeholder=''" onfocus="this.placeholder='0712345678'" onchange="numberStore(this)" required>
+											<span class="label">Prepaid Cellular Number</span>
+					  						<span class="border"></span>
+										</label>
+									</div>
+									<div class="form-holder">
+										<label class="form-row-inner">
+											<select class="form-control" id="last-name" name="last-name" style="position:relative;top:1rem;" required>
+											<option name="Vodacom">Vodacom</option>
+											<option name="MTN">MTN</option>
+											<option name="Telkom Mobile">Telkom Mobile</option>
+											<option name="Cell C">Cell C</option>
+											</select>
+											<span class="label">Cellular Network</span>
+					  						<span class="border"></span>
+										</label>
+									</div>
+								</div>
+							</div>
+			            </section>
+						<!-- SECTION 2 -->
+			            <h2>
+			            	<span class="step-icon"><i class="zmdi zmdi-lock"></i></span>
+			            	<span class="step-text">Payment</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+			                	<h3 style="font-size:16px;">Confirm your purchase to activate the 30 day unlimited <b id="choice">data</b> bundle for <b id="cnumber">0712345678</b></h3>
+								<div class="form-row">
+									<div id="radio">
+										<input type="radio" name="gender" value="male" checked class="radio-1"> Make a payment to our account Number (EFT).
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label class="form-row-inner">
+											<input type="text" name="your_email_1" id="acn" class="form-control" value="Account Number: 4096794306" readonly>
+											<a href="#copy" style="" onclick="copyThis('4096794306');" id="copylink"><i class="zmdi zmdi-receipt"></i>&nbsp;Copy Account Number</a>
+											<input type="text" name="your_email_1" id="famount" class="form-control" value="Amount Due: R79.00" readonly>
+											<input type="text" name="your_email_1" id="fbundle" class="form-control" value="Bundle: Unlimited Data" readonly>
+											<input type="text" name="your_email_1" id="fnumber" class="form-control" value="Reference: 0712345678" readonly>
+											<input type="text" name="your_email_1" id="your_email_1" class="form-control" value="Unlimited Bundles Gateway" readonly>
+											<input type="text" name="your_email_1" id="your_email_1" class="form-control" value="ABSA Current Business Account" readonly>
+										</label>
+									</div>
+								</div>
+								<div class="form-row">
+									<p style="font-size:13px;">Upon payment completion, the unlimited <font id="lbundle"></font> bundle will automatically be activated. This bundle will last 30 days, there is no usage threshold nor throttling, we provide unlimited bundle access for a duration of 30 days. <font id="nobank"><a href="javascript: noABSA()">I don't have an ABSA account?</a></font></p>
+								</div>
+						
+							</div>
+			            </section>
+			           
+			            
+		        	</div>
+		        </form>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/jquery.steps.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+	copyThis = function(acc) {
+	ac = document.getElementById('acn');
+	oc = ac.value;
+	ac.value = acc;
+	ac.select();
+	document.execCommand('copy');
+	ac.value = oc;
+	}
+	</script>
+	<script>
+	 function nextClick(e,wch,a) {
+	 document.querySelector('[role=\'menu\']').getElementsByTagName('a')[1].click();
+	 document.querySelector('[role=\'menu\']').style.opacity='1';
+	 document.getElementById('choice').innerHTML = wch.toLowerCase();
+	 document.getElementById('lbundle').innerHTML = wch.toLowerCase();
+	 document.getElementById('fbundle').value = "30 day Unlimited " + wch + " Bundle";
+	 document.getElementById('famount').value = "Amount Due: " + a;
+	 }
+	 function numberStore(e) {
+	 document.getElementById('cnumber').innerHTML = "0" + e.value;
+	 document.getElementById('fnumber').value = "Reference: 0" + e.value;
+	 }
+	 window.setTimeout(function() {
+	 document.querySelector('[role=\'menu\']').style.opacity='0'; }, 1000);
+	 
+	</script>
+	<script>
+	noABSA = function() {
+	document.getElementById('nobank').innerHTML = "Payments from all other banks are accepted, though an immediate or instant payment is recommended.";
+	}
+	</script>
+	
+</body>
+</html>
