@@ -30,6 +30,7 @@ document.write(`
 #copylink:active {color:transparent;}
 #copylink:active i:after {text-align:center;font-family:roboto,helvetica,arial,Open Sans;color:dodgerblue;content:"   Account Number Copied! ";width:100%;}
 #copylink:active i:before {content:'\f1b4';}
+.expert .form-control {font-size:14px !important;}
 </style>
 </head>
 <body onpageshow="window.setTimeout(function(){document.getElementById('loading').style.display='none';},3000);document.querySelector('[role=\'menu\']').style.opacity='0';">
@@ -103,17 +104,17 @@ document.write(`
 			            </h2>
 			            <section>
 			                <div class="inner">
-			                	<h3 style="font-size:16px;">Confirm your purchase to activate the 30 day unlimited <b id="choice">data</b> bundle for <b id="cnumber">0712345678</b></h3>
+			                	<h3 style="font-size:16px;">Confirm your purchase to activate the 30 day unlimited <b id="choice">data</b> bundle for <b id="cnumber">0712345678</b></h3><br/>
 								<div class="form-row">
 									<div id="radio">
 										<input type="radio" name="gender" value="male" checked class="radio-1"> Make a payment to our account Number (EFT).
 									</div>
-								</div>
-								<div class="form-row">
+								</div><br/>
+								<div class="form-row expert">
 									<div class="form-holder form-holder-2">
 										<label class="form-row-inner">
 											<input type="text" name="your_email_1" id="acn" class="form-control" value="Account Number: 4096794306" readonly>
-											<a href="#copy" style="" onclick="copyThis('4096794306');" id="copylink"><i class="zmdi zmdi-receipt"></i>&nbsp;Copy Account Number</a>
+											<a href="#copy" style="margin-top:6px;" onclick="copyThis('4096794306');" id="copylink"><i class="zmdi zmdi-receipt"></i>&nbsp;Copy Account Number</a><br/>
 											<input type="text" name="your_email_1" id="famount" class="form-control" value="Amount Due: R79.00" readonly>
 											<input type="text" name="your_email_1" id="fbundle" class="form-control" value="Bundle: Unlimited Data" readonly>
 											<input type="text" name="your_email_1" id="fnumber" class="form-control" value="Reference: 0712345678" readonly>
@@ -159,8 +160,13 @@ document.write(`
 	 document.getElementById('famount').value = "Amount Due: " + a;
 	 }
 	 function numberStore(e) {
-	 document.getElementById('cnumber').innerHTML = "0" + e.value;
-	 document.getElementById('fnumber').value = "Reference: 0" + e.value;
+	 if(e.value.charAt(0)!=="0")
+	 {
+	 e.value = "0" + e.value;
+	 }
+	 document.getElementById('cnumber').innerHTML = e.value;
+	 document.getElementById('fnumber').value = e.value;
+	 
 	 }
 	 window.setTimeout(function() {
 	 document.querySelector('[role=\'menu\']').style.opacity='0'; }, 1000);
